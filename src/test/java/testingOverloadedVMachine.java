@@ -40,23 +40,34 @@ public class testingOverloadedVMachine {
 
     @Test
     public void shouldTestBuyForSnack() {
-        OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 0);
+        OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 3, 0);
+        SaltySnack saltySnack = new SaltySnack();
+        overloadedVendingMachine.buy(saltySnack);
 
+        overloadedVendingMachine.buy(saltySnack);
+        assertEquals(overloadedVendingMachine.getStock(saltySnack), 5);
     }
 
     @Test
     public void shouldTestBuyForSnack2() {
         OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 0);
+        SaltySnack saltySnack = new SaltySnack();
+        overloadedVendingMachine.buy(saltySnack);
 
-
+        overloadedVendingMachine.buy(saltySnack);
+        assertEquals(overloadedVendingMachine.getStock(saltySnack), 2);
     }
 
     @Test
     public void shouldTestBuyForSnack3() {
 
-        OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 0);
+        OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 3, 0);
+        SaltySnack saltySnack = new SaltySnack();
+        overloadedVendingMachine.buy(saltySnack);
 
-
+        overloadedVendingMachine.buy(saltySnack);
+        overloadedVendingMachine.buy(saltySnack);
+        assertEquals(overloadedVendingMachine.getStock(saltySnack), 6);
     }
 
     @Test
@@ -64,22 +75,75 @@ public class testingOverloadedVMachine {
 
 
         OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 0);
-
+        Chocolate chocolate = new Chocolate();
+        overloadedVendingMachine.buy(chocolate);
+        assertEquals(overloadedVendingMachine.getStock(chocolate), 1);
     }
 
     @Test
     public void shouldTestBuyForChoc2() {
 
-        OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 0);
+        OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 4);
+        Chocolate chocolate = new Chocolate();
+        overloadedVendingMachine.buy(chocolate);
 
+        overloadedVendingMachine.buy(chocolate);
+
+        overloadedVendingMachine.buy(chocolate);
+        assertEquals(overloadedVendingMachine.getStock(chocolate), 7);
 
     }
 
     @Test
     public void shouldTestBuyForChoc3() {
 
-        OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 0);
-
+        OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 10);
+        Chocolate chocolate = new Chocolate();
+        overloadedVendingMachine.buy(chocolate);
+        assertEquals(overloadedVendingMachine.getStock(chocolate), 11);
 
     }
+
+    @Test
+    public void shouldTestBuyProduct() {
+        OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(1, 4, 7);
+        Product product = new Product();
+        Chocolate chocolate = new Chocolate();
+        SaltySnack saltySnack = new SaltySnack();
+        SoftDrink softDrink = new SoftDrink();
+        overloadedVendingMachine.buy(product);
+        overloadedVendingMachine.buy(product);
+        overloadedVendingMachine.buy(product);
+        assertEquals(overloadedVendingMachine.getStock(softDrink), 4);
+        assertEquals(overloadedVendingMachine.getStock(saltySnack), 7);
+        assertEquals(overloadedVendingMachine.getStock(chocolate), 10);
+    }
+
+    @Test
+    public void shouldTestBuyProduct2() {
+        OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(3, 5, 10);
+        Product product = new Product();
+        Chocolate chocolate = new Chocolate();
+        SaltySnack saltySnack = new SaltySnack();
+        SoftDrink softDrink = new SoftDrink();
+        overloadedVendingMachine.buy(product);
+        overloadedVendingMachine.buy(product);
+        assertEquals(overloadedVendingMachine.getStock(softDrink), 5);
+        assertEquals(overloadedVendingMachine.getStock(saltySnack), 7);
+        assertEquals(overloadedVendingMachine.getStock(chocolate), 12);
+    }
+
+    @Test
+    public void shouldTestBuyProduct3() {
+        OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(2, 6, 8);
+        Product product = new Product();
+        Chocolate chocolate = new Chocolate();
+        SaltySnack saltySnack = new SaltySnack();
+        SoftDrink softDrink = new SoftDrink();
+        overloadedVendingMachine.buy(product);
+        assertEquals(overloadedVendingMachine.getStock(softDrink), 3);
+        assertEquals(overloadedVendingMachine.getStock(saltySnack), 7);
+        assertEquals(overloadedVendingMachine.getStock(chocolate), 9);
+    }
+
 }
