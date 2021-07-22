@@ -7,49 +7,49 @@ import vending.product.SoftDrink;
 
 public class OverloadedVendingMachine {
 
-    int softDrinkQty, saltySnackQty, chocolateQty, productQty;
+    public int softDrinkQty, saltySnackQty, chocolateQty, productQty;
 
-    OverloadedVendingMachine(int softDrinkQty, int saltySnackQty, int chocolateQty) {
+    public OverloadedVendingMachine(int softDrinkQty, int saltySnackQty, int chocolateQty) {
         // set the stockLevel instance variables for each product in the constructor
         this.softDrinkQty = softDrinkQty;
         this.saltySnackQty = saltySnackQty;
         this.chocolateQty = chocolateQty;
     }
 
-    void buy(SoftDrink softdrink) {
+    public void buy(SoftDrink softdrink) {
         softDrinkQty++;
 
     }
 
-    void buy(SaltySnack saltySnack) {
+    public void buy(SaltySnack saltySnack) {
 
         saltySnackQty++;
     }
 
-    void buy(Chocolate chocolate) {
+    public void buy(Chocolate chocolate) {
 
         chocolateQty++;
     }
 
-    void buy(Product product) {
+    public void buy(Product product) {
         softDrinkQty++;
         saltySnackQty++;
         chocolateQty++;
     }
 
-    int getStock(SoftDrink softdrink) {
+    public int getStock(SoftDrink softdrink) {
         return softDrinkQty;
     }
 
-    int getStock(SaltySnack saltySnack) {
+    public int getStock(SaltySnack saltySnack) {
         return saltySnackQty;
     }
 
-    int getStock(Chocolate chocolate) {
+    public int getStock(Chocolate chocolate) {
         return chocolateQty;
     }
 
-    int getStock() {
+    public int getStock(Product product) {
         return productQty;
     }
 
