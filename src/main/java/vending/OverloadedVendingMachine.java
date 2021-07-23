@@ -32,9 +32,9 @@ public class OverloadedVendingMachine {
     }
 
     public void buy(Product product) {
-        softDrinkQty++;
-        saltySnackQty++;
-        chocolateQty++;
+        softDrinkQty += 3;
+        saltySnackQty += 3;
+        chocolateQty += 3;
     }
 
     public int getStock(SoftDrink softdrink) {
