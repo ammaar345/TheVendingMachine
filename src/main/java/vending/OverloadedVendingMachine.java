@@ -17,24 +17,42 @@ public class OverloadedVendingMachine {
     }
 
     public void buy(SoftDrink softdrink) {
-        softDrinkQty++;
+        softDrinkQty--;
 
     }
 
     public void buy(SaltySnack saltySnack) {
 
-        saltySnackQty++;
+        saltySnackQty--;
     }
 
     public void buy(Chocolate chocolate) {
 
-        chocolateQty++;
+        chocolateQty--;
     }
 
     public void buy(Product product) {
-        softDrinkQty += 3;
-        saltySnackQty += 3;
+        softDrinkQty--;
+        saltySnackQty--;
+        chocolateQty--;
+    }
+
+    public void addStock(SoftDrink softDrink) {
+        softDrinkQty++;
+    }
+
+    public void addStock(SaltySnack saltySnack) {
+        saltySnackQty++;
+    }
+
+    public void addStock(Chocolate chocolate) {
+        chocolateQty++;
+    }
+
+    public void addStock(Product product) {
         chocolateQty += 3;
+        saltySnackQty += 3;
+        softDrinkQty += 3;
     }
 
     public int getStock(SoftDrink softdrink) {
