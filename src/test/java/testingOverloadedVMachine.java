@@ -10,9 +10,7 @@ public class testingOverloadedVMachine {
     public void shouldTestBuyForDrink() {
         OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(3, 0, 0);
         SoftDrink softDrink = new SoftDrink();
-        overloadedVendingMachine.buy(softDrink);
-        overloadedVendingMachine.buy(softDrink);
-
+        overloadedVendingMachine.buy(softDrink,2);
 
         assertEquals(overloadedVendingMachine.getStock(softDrink), 1);
 
@@ -23,9 +21,7 @@ public class testingOverloadedVMachine {
         OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(5, 0, 0);
         SoftDrink softDrink = new SoftDrink();
         overloadedVendingMachine.addStock(softDrink);
-        overloadedVendingMachine.buy(softDrink);
-        overloadedVendingMachine.buy(softDrink);
-        overloadedVendingMachine.buy(softDrink);
+        overloadedVendingMachine.buy(softDrink,3);
         assertEquals(overloadedVendingMachine.getStock(softDrink), 3);
     }
 
@@ -33,9 +29,7 @@ public class testingOverloadedVMachine {
     public void shouldTestBuyForDrink2() {
         OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(4, 0, 0);
         SoftDrink softDrink = new SoftDrink();
-        overloadedVendingMachine.buy(softDrink);
-        overloadedVendingMachine.buy(softDrink);
-        overloadedVendingMachine.buy(softDrink);
+        overloadedVendingMachine.buy(softDrink,3);
         assertEquals(overloadedVendingMachine.getStock(softDrink), 1);
 
     }
@@ -47,9 +41,7 @@ public class testingOverloadedVMachine {
         overloadedVendingMachine.addStock(saltySnack);
         overloadedVendingMachine.addStock(saltySnack);
         overloadedVendingMachine.addStock(saltySnack);
-        overloadedVendingMachine.buy(saltySnack);
-
-        overloadedVendingMachine.buy(saltySnack);
+        overloadedVendingMachine.buy(saltySnack,2);
         assertEquals(overloadedVendingMachine.getStock(saltySnack), 4);
     }
 
@@ -57,9 +49,8 @@ public class testingOverloadedVMachine {
     public void shouldTestBuyForSnack2() {
         OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 7, 0);
         SaltySnack saltySnack = new SaltySnack();
-        overloadedVendingMachine.buy(saltySnack);
+        overloadedVendingMachine.buy(saltySnack,1);
 
-        overloadedVendingMachine.buy(saltySnack);
         assertEquals(overloadedVendingMachine.getStock(saltySnack), 5);
     }
 
@@ -72,11 +63,9 @@ public class testingOverloadedVMachine {
         SoftDrink softDrink = new SoftDrink();
         Product product = new Product();
         overloadedVendingMachine.addStock(product);
-        overloadedVendingMachine.buy(saltySnack);
+        overloadedVendingMachine.buy(saltySnack,4);
 
-        overloadedVendingMachine.buy(saltySnack);
-        overloadedVendingMachine.buy(saltySnack);
-        assertEquals(overloadedVendingMachine.getStock(saltySnack), 3);
+        assertEquals(overloadedVendingMachine.getStock(saltySnack), 2);
         assertEquals(overloadedVendingMachine.getStock(chocolate), 8);
         assertEquals(overloadedVendingMachine.getStock(softDrink), 4);
 
@@ -91,8 +80,8 @@ public class testingOverloadedVMachine {
         Product product = new Product();
         SaltySnack saltySnack = new SaltySnack();
         SoftDrink softDrink = new SoftDrink();
-        overloadedVendingMachine.buy(chocolate);
-        overloadedVendingMachine.buy(product);
+        overloadedVendingMachine.buy(chocolate,1);
+        overloadedVendingMachine.buy(product,1);
         assertEquals(overloadedVendingMachine.getStock(chocolate), 3);
         assertEquals(overloadedVendingMachine.getStock(softDrink), 2);
         assertEquals(overloadedVendingMachine.getStock(saltySnack), 1);
@@ -101,14 +90,11 @@ public class testingOverloadedVMachine {
     @Test
     public void shouldTestBuyForChoc2() {
 
-        OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 4);
+        OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 7);
         Chocolate chocolate = new Chocolate();
-        overloadedVendingMachine.buy(chocolate);
+        overloadedVendingMachine.buy(chocolate,5);
 
-        overloadedVendingMachine.buy(chocolate);
-
-        overloadedVendingMachine.buy(chocolate);
-        assertEquals(overloadedVendingMachine.getStock(chocolate), 1);
+        assertEquals(overloadedVendingMachine.getStock(chocolate), 2);
 
     }
 
@@ -117,9 +103,10 @@ public class testingOverloadedVMachine {
 
         OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 10);
         Chocolate chocolate = new Chocolate();
-        overloadedVendingMachine.buy(chocolate);
-        overloadedVendingMachine.buy(chocolate);
-        assertEquals(overloadedVendingMachine.getStock(chocolate), 8);
+        overloadedVendingMachine.addStock(chocolate);
+        overloadedVendingMachine.addStock(chocolate);
+        overloadedVendingMachine.buy(chocolate,2);
+        assertEquals(overloadedVendingMachine.getStock(chocolate), 10);
 
     }
 
@@ -130,8 +117,7 @@ public class testingOverloadedVMachine {
         Chocolate chocolate = new Chocolate();
         SaltySnack saltySnack = new SaltySnack();
         SoftDrink softDrink = new SoftDrink();
-        overloadedVendingMachine.buy(product);
-        overloadedVendingMachine.buy(product);
+        overloadedVendingMachine.buy(product,2);
         assertEquals(overloadedVendingMachine.getStock(softDrink), 18);
         assertEquals(overloadedVendingMachine.getStock(saltySnack), 39);
         assertEquals(overloadedVendingMachine.getStock(chocolate), 8);
@@ -144,8 +130,8 @@ public class testingOverloadedVMachine {
         Chocolate chocolate = new Chocolate();
         SaltySnack saltySnack = new SaltySnack();
         SoftDrink softDrink = new SoftDrink();
-        overloadedVendingMachine.buy(product);
-        overloadedVendingMachine.buy(chocolate);
+        overloadedVendingMachine.buy(product,1);
+        overloadedVendingMachine.buy(chocolate,1);
         assertEquals(overloadedVendingMachine.getStock(softDrink), 2);
         assertEquals(overloadedVendingMachine.getStock(saltySnack), 4);
         assertEquals(overloadedVendingMachine.getStock(chocolate), 8);
@@ -161,10 +147,11 @@ public class testingOverloadedVMachine {
         SoftDrink softDrink = new SoftDrink();
         overloadedVendingMachine.addStock(product);
         overloadedVendingMachine.addStock(product);
-        overloadedVendingMachine.buy(product);
-        assertEquals(overloadedVendingMachine.getStock(softDrink), 7);
-        assertEquals(overloadedVendingMachine.getStock(saltySnack), 11);
-        assertEquals(overloadedVendingMachine.getStock(chocolate), 13);
+        overloadedVendingMachine.buy(product,3);
+        assertEquals(overloadedVendingMachine.getStock(softDrink), 5);
+        assertEquals(overloadedVendingMachine.getStock(saltySnack), 9);
+        assertEquals(overloadedVendingMachine.getStock(chocolate), 11);
+        assertEquals(overloadedVendingMachine.getStock(), 25);
 
     }
 

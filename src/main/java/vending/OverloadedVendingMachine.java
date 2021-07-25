@@ -9,44 +9,53 @@ public class OverloadedVendingMachine {
 
     public int softDrinkQty, saltySnackQty, chocolateQty, productQty;
 
+
+    //create a buy method that allows you to specify how many of a certain Product you want to buy
+//create a addStock method that allows you to specify how many of a certain Product you want to add to stock.
     public OverloadedVendingMachine(int softDrinkQty, int saltySnackQty, int chocolateQty) {
         // set the stockLevel instance variables for each product in the constructor
         this.softDrinkQty = softDrinkQty;
         this.saltySnackQty = saltySnackQty;
         this.chocolateQty = chocolateQty;
+        this.productQty = saltySnackQty + chocolateQty + softDrinkQty;
     }
 
-    public void buy(SoftDrink softdrink) {
-        softDrinkQty--;
-
+    public void buy(SoftDrink softdrink, int qty) {
+        softDrinkQty -= qty;
+        productQty--;
     }
 
-    public void buy(SaltySnack saltySnack) {
+    public void buy(SaltySnack saltySnack, int qty) {
 
-        saltySnackQty--;
+        saltySnackQty -= qty;
+        productQty--;
     }
 
-    public void buy(Chocolate chocolate) {
+    public void buy(Chocolate chocolate, int qty) {
 
-        chocolateQty--;
+        chocolateQty -= qty;
+        productQty--;
     }
 
-    public void buy(Product product) {
-        softDrinkQty--;
-        saltySnackQty--;
-        chocolateQty--;
+    public void buy(Product product, int qty) {
+        softDrinkQty -= qty;
+        saltySnackQty -= qty;
+        chocolateQty -= qty;
     }
 
     public void addStock(SoftDrink softDrink) {
         softDrinkQty++;
+        productQty++;
     }
 
     public void addStock(SaltySnack saltySnack) {
         saltySnackQty++;
+        productQty++;
     }
 
     public void addStock(Chocolate chocolate) {
         chocolateQty++;
+        productQty++;
     }
 
     public void addStock(Product product) {
@@ -67,7 +76,7 @@ public class OverloadedVendingMachine {
         return chocolateQty;
     }
 
-    public int getStock(Product product) {
+    public int getStock() {
         return productQty;
     }
 
