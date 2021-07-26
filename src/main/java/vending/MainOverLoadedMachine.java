@@ -5,7 +5,7 @@ import vending.product.Product;
 import vending.product.SaltySnack;
 import vending.product.SoftDrink;
 
-public class Main {
+public class MainOverLoadedMachine {
     public static void main(String[] args) {
         OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(20, 44, 86);
         Chocolate chocolate = new Chocolate();
