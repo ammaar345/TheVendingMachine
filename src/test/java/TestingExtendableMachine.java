@@ -3,9 +3,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import vending.ExtendableVendingMachine;
-import vending.productExtend.*;
+import vending.product.*;
 
-public class testingExtendableMachine {
+public class TestingExtendableMachine {
     @Test
     public void shouldTestAddStockChoc() {
         ExtendableVendingMachine extendableVendingMachine = new ExtendableVendingMachine(1, 0, 2);

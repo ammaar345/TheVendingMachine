@@ -1,7 +1,7 @@
 package vending;
 
-import vending.product.Product;
-import vending.productException.*;
+import vending.product.*;
+import vending.exceptions.*;
 
 public class ExceptionalVendingMachine {
     private int chocolateQty, saltySnackQty, softDrinkQty;
@@ -11,30 +11,8 @@ public class ExceptionalVendingMachine {
         this.saltySnackQty = snackQty;
         this.softDrinkQty = drinkQty;
     }
-    public class ProductNotFoundException  extends Exception {
-        public ProductNotFoundException (String message) {
-            super(message);
-        }
-    }
-    public class SoftDrinksOutOfStockException extends ProductNotFoundException {
-        public SoftDrinksOutOfStockException(String message) {
-            super(message);
-        }
-    }
 
-    public class SaltyCracksAllEatenException extends ProductNotFoundException {
-        public SaltyCracksAllEatenException(String message) {
-            super(message);
-        }
-    }
-
-    public class ChocolatesAllGoneException extends ProductNotFoundException {
-        public ChocolatesAllGoneException(String message) {
-            super(message);
-        }
-    }
-
-    public void buy(Product product) throws ProductNotFoundException{
+    public void buy(Product product) throws ProductNotFoundException {
 
         if (product instanceof Chocolate) {
             chocolateQty--;

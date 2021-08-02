@@ -1,10 +1,6 @@
 package vending;
 
-import vending.product.Chocolate;
-import vending.product.Product;
-import vending.product.SaltySnack;
-import vending.product.SoftDrink;
-
+import vending.product.*;
 public class MainOverLoadedMachine {
     public static void main(String[] args) {
         OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(20, 44, 86);

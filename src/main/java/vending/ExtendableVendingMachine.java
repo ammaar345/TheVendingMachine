@@ -1,9 +1,6 @@
 package vending;
 
-import vending.productExtend.Chocolate;
-import vending.productExtend.Product;
-import vending.productExtend.SaltySnack;
-import vending.productExtend.SoftDrink;
+import vending.product.*;
 
 public class ExtendableVendingMachine {
     private int chocolateQty, softDrinkQty, saltySnackQty;

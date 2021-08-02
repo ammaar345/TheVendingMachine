@@ -1,7 +1,5 @@
 package vending;
-
-import vending.productExtend.*;
-
+import vending.product.*;
 public class MainExtendableMachine {
     public static void main(String[] args) {
         ExtendableVendingMachine extendableVendingMachine = new ExtendableVendingMachine(10, 42, 75);

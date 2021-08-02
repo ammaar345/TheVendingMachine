@@ -1,7 +1,6 @@
 package vending;
-
-import vending.productException.*;
-import vending.ExceptionalVendingMachine.ProductNotFoundException;
+import vending.product.*;
+import vending.exceptions.ProductNotFoundException;
 
 public class MainExceptionalMachine {
     public static void main(String[] args) throws ProductNotFoundException {
