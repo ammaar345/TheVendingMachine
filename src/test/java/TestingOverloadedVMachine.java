@@ -51,7 +51,7 @@ public class TestingOverloadedVMachine {
         SaltySnack saltySnack = new SaltySnack();
         overloadedVendingMachine.buy(saltySnack,1);
 
-        assertEquals(overloadedVendingMachine.getStock(saltySnack), 5);
+        assertEquals(overloadedVendingMachine.getStock(saltySnack), 6);
     }
 
     @Test
@@ -151,7 +151,7 @@ public class TestingOverloadedVMachine {
         assertEquals(overloadedVendingMachine.getStock(softDrink), 5);
         assertEquals(overloadedVendingMachine.getStock(saltySnack), 9);
         assertEquals(overloadedVendingMachine.getStock(chocolate), 11);
-        assertEquals(overloadedVendingMachine.getStock(), 25);
+        assertEquals(overloadedVendingMachine.getStock(), 16);
 
     }
 

@@ -26,9 +26,9 @@ public class TestingExtendableMachine {
         SoftDrink softDrink = new SoftDrink();
         extendableVendingMachine.addStock(softDrink, 2);
         extendableVendingMachine.buy(softDrink, 10);
-        assertEquals(extendableVendingMachine.getProductQty(chocolate), 32);
+        assertEquals(extendableVendingMachine.getProductQty(chocolate), 30);
 
-        assertEquals(extendableVendingMachine.getProductQty(softDrink), 13);
+        assertEquals(extendableVendingMachine.getProductQty(softDrink), 15);
 
         assertEquals(extendableVendingMachine.getProductQty(saltySnack), 49);
     }
